@@ -1,49 +1,60 @@
 ---
 import Bars from "./Bars.astro"
-import { buy } from "../sample"
-
 import svgUnderline from '../assets/underline.svg'
 import arrowCard from '../assets/arrow-card.svg'
+import caseVitrifi from '../assets/case-vitrifi.svg'
+import casePhd from '../assets/case-phd.svg'
 
 const portfolio = [
-  { 
-    name: 'Portfolio design', desc: `UI design - User research - webflow development`,
-    cover: `https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`
+  {
+    name: 'CRA Compliance GTM — From regulation to pipeline',
+    desc: `Positioning · GTM · Content · Events · Partner enablement`,
+    cover: `https://assets.ubuntu.com/v1/e0a65a01-Yocto%20vs%20Core%20wp%20v2%20(6).svg`,
+    link: '#case-cra',
+    external: false,
   },
-  { 
-    name: 'Portfolio design', desc: `UI design - User research - webflow development`,
-    cover: `https://images.pexels.com/photos/2303781/pexels-photo-2303781.jpeg?auto=compress&cs=tinysrgb&w=1600`
+  {
+    name: 'Event GTM at Scale — 6 shows, 156 MQLs, 150+ partners',
+    desc: `Event marketing · Email campaigns · Demand gen · Partner GTM`,
+    cover: `https://assets.ubuntu.com/v1/71be06b2-Create%20a%20security%20key@3x.png`,
+    link: '#case-events',
+    external: false,
   },
-  { 
-    name: 'Portfolio design', desc: `UI design - User research - webflow development`,
-    cover: `https://images.pexels.com/photos/441963/pexels-photo-441963.jpeg?auto=compress&cs=tinysrgb&w=1600`
+  {
+    name: 'B2B SaaS Repositioning — 85+ interviews, one new narrative',
+    desc: `Customer research · Positioning · Messaging · Sales enablement`,
+    cover: caseVitrifi.src,
+    link: '#case-vitrifi',
+    external: false,
   },
-  { 
-    name: 'Portfolio design', desc: `UI design - User research - webflow development`,
-    cover: `https://images.pexels.com/photos/245240/pexels-photo-245240.jpeg?auto=compress&cs=tinysrgb&w=1600`
+  {
+    name: 'Programmatic at Scale — £1M+ budgets, 4 DSPs, +15% ROI',
+    desc: `Paid media · Automation · Analytics · DV360 · Amazon DSP`,
+    cover: casePhd.src,
+    link: '#case-phd',
+    external: false,
   },
 ]
 ---
 
-
 <section class="py-25 space-y-10 px-5" id="work">
-    <div class="max-w-md mx-auto relative ">
+    <div class="max-w-md mx-auto relative">
       <h1 class="text-4xl font-medium text-center">My Portfolio</h1>
-      <img src={svgUnderline.src} alt="arrow" width="140" class="absolute left-50 -bottom-1" />
+      <img src={svgUnderline.src} alt="underline" width="140" class="absolute left-50 -bottom-1" />
     </div>
-  
-    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10"> 
-      {portfolio.map(item => ( 
-        <a href={buy.link} target="_blank" class="flex flex-col bg-white p-5 group relative transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
-          <div class="w-full h-[200px] overflow-hidden border-2">
-           <img src={item.cover} alt="" class="w-full h-full object-cover" />
+
+    <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+      {portfolio.map(item => (
+        <a href={item.link} class="flex flex-col bg-white p-5 group relative transition-all duration-200 hover:shadow-[4px_4px_0px_rgba(0,0,0,0.3)]">
+          <div class="w-full h-[200px] overflow-hidden border-2 bg-gray-50">
+            <img src={item.cover} alt={item.name} class="w-full h-full object-cover" />
           </div>
           <div class="space-y-1 pt-4">
             <div class="flex pr-2">
               <h2 class="text-xl font-medium flex-1">{item.name}</h2>
               <img src={arrowCard.src} alt="arrow" width="25" />
             </div>
-            <p class="mr-20">{item.desc}</p>
+            <p class="mr-20 text-sm text-gray-500">{item.desc}</p>
           </div>
           <Bars />
         </a>

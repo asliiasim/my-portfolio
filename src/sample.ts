@@ -1,15 +1,16 @@
 const author = {
-  name: `Angela`,
-  nickname: `angie`,
-  tiktok: `https://www.tiktok.com/@indieteamofone`,
-  ig: `https://www.instagram.com/indieteamofone/`,
-  x: `https://x.com/indieteamofone`,
-  email: "mailto:anthonylannn@gmail.com",
+  name: `Asli Şimşek`,
+  nickname: `Asli Şimşek`,
+  linkedin: `https://linkedin.com/in/aslialimesimsek`,
+  email: `mailto:aslialimesimsek@gmail.com`,
+  x: `https://linkedin.com/in/aslialimesimsek`,
+  tiktok: `https://linkedin.com/in/aslialimesimsek`,
+  ig: `https://linkedin.com/in/aslialimesimsek`,
 };
 
 const buy = {
-  title: `See on Github`,
-  link: `https://github.com/anthonylan/angie`,
+  title: `Get in touch →`,
+  link: `mailto:aslialimesimsek@gmail.com`,
 };
 
 export { author, buy };
