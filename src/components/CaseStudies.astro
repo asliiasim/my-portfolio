@@ -200,16 +200,20 @@ const cases = [
 
         <details class="border-2 border-black">
           <summary class="p-4 font-bold cursor-pointer select-none hover:bg-gray-50 transition-colors">
-            How I Did It
+            How I Did It — Methodology & Execution
           </summary>
-          <ul class="p-4 pt-0 space-y-2 border-t-2 border-black">
-            {c.howIDidIt.map(item => (
-              <li class="flex gap-3 text-sm leading-relaxed">
-                <span class="font-bold shrink-0">•</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+          <div class="p-4 pt-0 border-t-2 border-black space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {c.howIDidIt.map((item, idx) => (
+                <div class="border-l-4 border-gray-300 pl-4 py-2">
+                  <div class="flex gap-2 items-start">
+                    <span class="font-bold text-gray-400 shrink-0 text-sm">Step {idx + 1}</span>
+                    <p class="text-sm leading-relaxed">{item}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </details>
 
       </article>

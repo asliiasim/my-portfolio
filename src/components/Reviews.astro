@@ -40,39 +40,66 @@ const testimonials = [
 ]
 ---
 
+<script>
+import { gsap } from 'gsap';
+
+document.addEventListener('DOMContentLoaded', function () {
+    const ticker = document.querySelector('#testimonial-ticker') as any;
+
+    if (!ticker) return;
+    
+    // Clone items for infinite scroll effect
+    Array.from(ticker.children).forEach((el: any) => {
+        ticker.appendChild(el.cloneNode(true));
+    });
+
+    // Animate from right to left (continuous scroll)
+    gsap.to(ticker, {
+        x: -(ticker.scrollWidth / 2),
+        duration: 60,
+        ease: 'none',
+        repeat: -1,
+    });
+});
+</script>
+
 <section>
-    <div class="max-w-4xl mx-auto pb-20 px-10">
-      <div class="flex relative mb-10">
-        <h1 class="text-3xl">What others say</h1>
-        <img src={svgNew.src} alt="new" width="40" class="absolute -right-3 md:-right-10 bottom-0" />
+    <div class="max-w-full pb-20">
+      <div class="max-w-4xl mx-auto px-10 mb-10">
+        <div class="flex relative">
+          <h1 class="text-3xl">What others say</h1>
+          <img src={svgNew.src} alt="new" width="40" class="absolute -right-3 md:-right-10 bottom-0" />
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-        <div class="space-y-8">
+      <div class="overflow-hidden border-y border-gray-200 py-8 mb-10">
+        <div class="flex gap-8 md:gap-12 px-10" id="testimonial-ticker">
           {testimonials.map(t => (
-            <div class="border-l-4 border-[var(--yellow)] pl-6 py-4">
-              <p class="text-lg leading-relaxed">"{t.quote}"</p>
-              <div class="mt-6">
+            <div class="flex-shrink-0 w-96 border-l-4 border-[var(--yellow)] pl-6 py-4">
+              <p class="text-base leading-relaxed mb-6">"{t.quote}"</p>
+              <div>
                 {t.linkedinUrl ? (
-                  <a href={t.linkedinUrl} target="_blank" rel="noopener noreferrer" class="font-bold hover:underline">{t.name}</a>
+                  <a href={t.linkedinUrl} target="_blank" rel="noopener noreferrer" class="font-bold hover:underline text-sm">{t.name}</a>
                 ) : (
-                  <p class="font-bold">{t.name}</p>
+                  <p class="font-bold text-sm">{t.name}</p>
                 )}
-                <p class="text-sm text-gray-500">{t.title}</p>
-                <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-1">{t.verificationNote}</p>
+                <p class="text-xs text-gray-500">{t.title}</p>
+                <p class="text-[9px] uppercase tracking-widest text-gray-400 mt-1">{t.verificationNote}</p>
               </div>
             </div>
           ))}
-          <p class="text-sm text-gray-500 pl-6">
-            Additional references available on request. Full recommendation history on
-            <a href="https://linkedin.com/in/aslialimesimsek" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4">LinkedIn</a>.
-          </p>
         </div>
+      </div>
 
-        <div class="space-y-4">
-          <p class="text-xs font-black tracking-widest uppercase text-gray-500">Impact by the numbers</p>
-          <div class="space-y-3">
+      <div class="max-w-4xl mx-auto px-10">
+        <p class="text-sm text-gray-500 mb-6">
+          Additional references available on request. Full recommendation history on
+          <a href="https://linkedin.com/in/aslialimesimsek" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4">LinkedIn</a>.
+        </p>
+
+        <div>
+          <p class="text-xs font-black tracking-widest uppercase text-gray-500 mb-6">Impact by the numbers</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="border-l-2 border-black pl-4">
               <p class="font-medium">156 MQLs from one email campaign</p>
               <p class="text-sm text-gray-500">1,121 contacts, 45% open rate. SPS 2025, Canonical.</p>
@@ -86,12 +113,11 @@ const testimonials = [
               <p class="text-sm text-gray-500">Repositioned SDR sequences. Industry benchmark 30 to 40%.</p>
             </div>
             <div class="border-l-2 border-black pl-4">
-              <p class="font-medium">4 live public assets</p>
-              <p class="text-sm text-gray-500">Whitepapers and webinar on-demand. Verifiable at ubuntu.com.</p>
+              <p class="font-medium">5+ live public assets</p>
+              <p class="text-sm text-gray-500">Whitepapers, webinar, and blog posts. Verifiable at ubuntu.com and canonical.com.</p>
             </div>
           </div>
         </div>
-
       </div>
     </div>
 </section>
