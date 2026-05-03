@@ -1,5 +1,10 @@
 ---
 import svgUnderline from '../assets/underline.svg'
+import execNvidiaJetson from '../assets/exec-nvidia-jetson.png'
+import execRoscon2025 from '../assets/exec-roscon-2025.png'
+import execBotmindFleet from '../assets/exec-botmind-fleet.png'
+import execInfotainmentKanzi from '../assets/exec-infotainment-kanzi.jpg'
+import exec8kInfotainment from '../assets/exec-8k-infotainment.jpg'
 
 const cases = [
   {
@@ -24,6 +29,9 @@ const cases = [
       'Activated the narrative across SPS 2025, Embedded World 2025, and CES 2026 with partner-aligned messaging for 150+ ecosystem partners including NVIDIA, Qualcomm, Bosch Rexroth, Intel, Advantech, and congatec.',
       'Ran paid and organic social experiments, including video content filmed with Canonical\'s Robotics Product Manager, to test long and short form content performance for whitepaper promotion.',
       '**SPS 2025 execution:** 156 MQLs from email campaign (1,121 targeted contacts, 45% open rate, segmented B2B industrial automation exhibitor list).',
+    ],
+    executionImages: [
+      { src: execNvidiaJetson.src, alt: 'NVIDIA Jetson Thor demo - AI deployment proof', caption: 'NVIDIA Jetson Thor AI capabilities demonstration' },
     ],
     resultsParas: [
       'The CRA campaign became Canonical\'s primary IoT GTM narrative for 2025 to 2026.',
@@ -77,6 +85,12 @@ const cases = [
       'Also planned the Embedded World 2026 GTM including silicon partner demo planning, booth logistics, and joint marketing with Advantech, Avnet, and Witekio. Execution completed by successor team after December 2025 departure.',
       'The infotainment demo built with Rightware during this period was subsequently reused by Canonical at MWC 2026. The work outlasted the tenure.',
       '**ROSCon 2025 proof:** Facebook post reached 60K impressions at 6% engagement rate (3x platform average). Partner co-booth strategy (Canonical + NVIDIA + Advantech + BotMind) generated more qualified conversations than any solo booth would have at four times the cost.',
+    ],
+    executionImages: [
+      { src: execRoscon2025.src, alt: 'ROSCon 2025 Singapore event', caption: 'ROSCon Singapore partner co-booth activation' },
+      { src: execBotmindFleet.src, alt: 'Botmind fleet management demo', caption: 'Botmind fleet management system demo' },
+      { src: execInfotainmentKanzi.src, alt: 'Kanzi UI infotainment interface', caption: 'Kanzi infotainment UI at CES 2026' },
+      { src: exec8kInfotainment.src, alt: '8K infotainment demo', caption: 'Cloud-native 8K infotainment experience' },
     ],
     resultsParas: [
       'The ROSCon Singapore Facebook post reached 60K impressions at a 6% engagement rate, 3x the platform average.',
@@ -166,8 +180,18 @@ const cases = [
             </div>
             <div>
               <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Action</h4>
-              <div class="space-y-3">
+              <div class="space-y-4">
                 {c.actionParas.map(p => <p class="leading-relaxed">{p}</p>)}
+                {c.executionImages && c.executionImages.length > 0 && (
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    {c.executionImages.map(img => (
+                      <figure>
+                        <img src={img.src} alt={img.alt} class="w-full border border-gray-200" />
+                        <figcaption class="text-xs text-gray-500 mt-2 text-center italic">{img.caption}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
             <div>
