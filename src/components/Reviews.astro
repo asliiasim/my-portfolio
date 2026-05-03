@@ -3,60 +3,63 @@ import svgNew from '../assets/new.svg'
 
 const testimonials = [
   {
-    comment: `"Asli is the rare PMM who interviews 85 buyers, synthesises what they actually care about, and turns it into a narrative that sales adopts immediately. The repositioning she led genuinely changed how we sell."`,
-    author: {
-      name: `[Name TBC]`,
-      pos: `[Title TBC] · B2B SaaS telecoms scale-up`,
-      pic: `https://images.pexels.com/photos/2709386/pexels-photo-2709386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`
-    },
-    cls: `rotate-2 -translate-y-10`
-  },
-  {
-    comment: `"She built our entire event GTM infrastructure across six flagship shows in twelve months — the messaging, the partner materials, the SDR cadences, the battlecards. The SPS campaign alone produced 156 MQLs."`,
-    author: {
-      name: `[Name TBC]`,
-      pos: `[Title TBC] · Canonical`,
-      pic: `https://images.pexels.com/photos/2128819/pexels-photo-2128819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`
-    },
-    cls: `-rotate-2 -translate-x-10 z-5`
-  },
-  {
-    comment: `"Asli managed one of our most demanding accounts as sole owner for 1.5 years. Her reporting automation saved the team hundreds of hours and her results were consistently above benchmark."`,
-    author: {
-      name: `[Name TBC]`,
-      pos: `[Title TBC] · PHD Media / Omnicom`,
-      pic: `https://images.pexels.com/photos/2169429/pexels-photo-2169429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`
-    },
-    cls: `rotate-2 translate-x-5 z-5`
+    quote: "She is quick to suggest good ideas while developing both the processes powering effective go-to-market strategies and developing the narratives for each product launch. I highly recommend Asli for the full range of Marketing, Channel and Product Marketing roles.",
+    name: "Oliver Happy",
+    title: "ProdMind Co-founder · Advisor (FinTech, Web3, AI)",
+    linkedinUrl: "https://www.linkedin.com/in/oliverhappy/",
+    verificationNote: "Verified LinkedIn recommendation · July 2025",
   },
 ]
 ---
 
 <section>
-    <div class="max-w-4xl mx-auto pb-20 px-10 overflow-hidden">
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <div class="flex relative">
-          <h1 class="text-3xl">Here's what my clients are saying about my work</h1>
-          <img src={svgNew.src} alt="new" width="40" class="absolute -right-3 md:-right-10 bottom-0" />
-        </div>
+    <div class="max-w-4xl mx-auto pb-20 px-10">
+      <div class="flex relative mb-10">
+        <h1 class="text-3xl">What others say</h1>
+        <img src={svgNew.src} alt="new" width="40" class="absolute -right-3 md:-right-10 bottom-0" />
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 py-30 gap-y-6">
-        {testimonials.map(item => (
-          <div class={`flex flex-col gap-3 p-5 pr-15 bg-white border-2 shadow-[6px_6px_0px_rgba(0,0,0,0.3)] ${item.cls}`}>
-            <p>{item.comment}</p>
-            <div class="flex items-center gap-2">
-              <div class="size-11 rounded-full border overflow-hidden shrink-0">
-                <img src={item.author.pic} alt="" class="w-full h-full object-cover" />
-              </div>
-              <div>
-                <h3 class="font-medium">{item.author.name}</h3>
-                <p class="text-sm text-gray-500">{item.author.pos}</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+        <div class="space-y-8">
+          {testimonials.map(t => (
+            <div class="border-l-4 border-[var(--yellow)] pl-6 py-4">
+              <p class="text-lg leading-relaxed">"{t.quote}"</p>
+              <div class="mt-6">
+                <a href={t.linkedinUrl} target="_blank" rel="noopener noreferrer" class="font-bold hover:underline">{t.name}</a>
+                <p class="text-sm text-gray-500">{t.title}</p>
+                <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-1">{t.verificationNote}</p>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+          <p class="text-sm text-gray-500 pl-6">
+            Additional references available on request. Full recommendation history on
+            <a href="https://linkedin.com/in/aslialimesimsek" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4">LinkedIn</a>.
+          </p>
+        </div>
 
+        <div class="space-y-4">
+          <p class="text-xs font-black tracking-widest uppercase text-gray-500">Impact by the numbers</p>
+          <div class="space-y-3">
+            <div class="border-l-2 border-black pl-4">
+              <p class="font-medium">156 MQLs from one email campaign</p>
+              <p class="text-sm text-gray-500">1,121 contacts, 45% open rate. SPS 2025, Canonical.</p>
+            </div>
+            <div class="border-l-2 border-black pl-4">
+              <p class="font-medium">150+ partners enabled</p>
+              <p class="text-sm text-gray-500">NVIDIA, Qualcomm, Bosch Rexroth and more. Co-marketing materials and training adopted across the ecosystem.</p>
+            </div>
+            <div class="border-l-2 border-black pl-4">
+              <p class="font-medium">65% email open rate</p>
+              <p class="text-sm text-gray-500">Repositioned SDR sequences. Industry benchmark 30 to 40%.</p>
+            </div>
+            <div class="border-l-2 border-black pl-4">
+              <p class="font-medium">4 live public assets</p>
+              <p class="text-sm text-gray-500">Whitepapers and webinar on-demand. Verifiable at ubuntu.com.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 </section>
