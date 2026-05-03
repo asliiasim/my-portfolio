@@ -1,0 +1,27 @@
+---
+const companies = [
+  { name: 'Canonical', url: 'https://canonical.com' },
+  { name: 'NVIDIA', url: 'https://nvidia.com' },
+  { name: 'Qualcomm', url: 'https://qualcomm.com' },
+  { name: 'Bosch Rexroth', url: 'https://boschrexroth.com' },
+  { name: 'Omnicom / PHD', url: 'https://www.phdmedia.com' },
+]
+---
+
+<div class="py-8 px-5 border-y border-gray-200">
+  <div class="max-w-4xl mx-auto">
+    <p class="text-[10px] font-black tracking-[0.2em] uppercase text-gray-400 text-center mb-6">Worked with</p>
+    <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+      {companies.map(c => (
+        <a
+          href={c.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-bold tracking-wide text-gray-400 hover:text-gray-600 transition-colors uppercase"
+        >
+          {c.name}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
