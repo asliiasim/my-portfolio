@@ -1,25 +1,31 @@
 ---
+import logoCanonical from '../assets/logo-canonical.svg'
+import logoNvidia from '../assets/logo-nvidia.svg'
+import logoQualcomm from '../assets/logo-qualcomm.svg'
+import logoBosch from '../assets/logo-bosch.svg'
+import logoOmnicom from '../assets/logo-omnicom.svg'
+
 const companies = [
-  { name: 'Canonical', url: 'https://canonical.com' },
-  { name: 'NVIDIA', url: 'https://nvidia.com' },
-  { name: 'Qualcomm', url: 'https://qualcomm.com' },
-  { name: 'Bosch Rexroth', url: 'https://boschrexroth.com' },
-  { name: 'Omnicom / PHD', url: 'https://www.phdmedia.com' },
+  { name: 'Canonical', logo: logoCanonical.src, url: 'https://canonical.com' },
+  { name: 'NVIDIA', logo: logoNvidia.src, url: 'https://nvidia.com' },
+  { name: 'Qualcomm', logo: logoQualcomm.src, url: 'https://qualcomm.com' },
+  { name: 'Bosch Rexroth', logo: logoBosch.src, url: 'https://boschrexroth.com' },
+  { name: 'Omnicom / PHD', logo: logoOmnicom.src, url: 'https://www.phdmedia.com' },
 ]
 ---
 
 <div class="py-8 px-5 border-y border-gray-200">
   <div class="max-w-4xl mx-auto">
-    <p class="text-[10px] font-black tracking-[0.2em] uppercase text-gray-400 text-center mb-6">Worked with</p>
-    <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+    <div class="flex flex-wrap items-center justify-center gap-12 md:gap-16">
       {companies.map(c => (
         <a
           href={c.url}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-sm font-bold tracking-wide text-gray-400 hover:text-gray-600 transition-colors uppercase"
+          class="hover:opacity-70 transition-opacity"
+          title={c.name}
         >
-          {c.name}
+          <img src={c.logo} alt={c.name} class="h-8 md:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
         </a>
       ))}
     </div>
