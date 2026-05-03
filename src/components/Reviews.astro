@@ -9,6 +9,34 @@ const testimonials = [
     linkedinUrl: "https://www.linkedin.com/in/oliverhappy/",
     verificationNote: "Verified LinkedIn recommendation · July 2025",
   },
+  {
+    quote: "Not everyone has the character to maintain this level of quality and commitment under pressure.",
+    name: "Colleague",
+    title: "Marketing Team, Canonical",
+    linkedinUrl: null,
+    verificationNote: "Team feedback · December 2025",
+  },
+  {
+    quote: "Figuring everything out with you is way better than trying to figure it out alone.",
+    name: "Colleague",
+    title: "Product Team, Canonical",
+    linkedinUrl: null,
+    verificationNote: "Team feedback · December 2025",
+  },
+  {
+    quote: "Thank you for the work she started and the attitude she brought in her time here. We're wishing her all the best.",
+    name: "Leadership",
+    title: "Canonical IoT & Devices",
+    linkedinUrl: null,
+    verificationNote: "Team feedback · December 2025",
+  },
+  {
+    quote: "Thank you for your work to wrangle all of this at the last minute.",
+    name: "Colleague",
+    title: "Marketing Team, Canonical",
+    linkedinUrl: null,
+    verificationNote: "Team feedback · December 2025",
+  },
 ]
 ---
 
@@ -26,7 +54,11 @@ const testimonials = [
             <div class="border-l-4 border-[var(--yellow)] pl-6 py-4">
               <p class="text-lg leading-relaxed">"{t.quote}"</p>
               <div class="mt-6">
-                <a href={t.linkedinUrl} target="_blank" rel="noopener noreferrer" class="font-bold hover:underline">{t.name}</a>
+                {t.linkedinUrl ? (
+                  <a href={t.linkedinUrl} target="_blank" rel="noopener noreferrer" class="font-bold hover:underline">{t.name}</a>
+                ) : (
+                  <p class="font-bold">{t.name}</p>
+                )}
                 <p class="text-sm text-gray-500">{t.title}</p>
                 <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-1">{t.verificationNote}</p>
               </div>
