@@ -107,9 +107,9 @@ const projects = [
     </div>
 
     {projects.map(p => (
-      <article id={p.id} class="border-t-2 border-black pt-8 space-y-5">
+      <article id={p.id} class="border-t-2 border-black pt-8">
 
-        <div class="flex flex-wrap gap-2 items-start justify-between">
+        <div class="flex flex-wrap gap-2 items-start justify-between mb-4">
           <div>
             {p.label && <span class="text-[10px] font-black tracking-[0.2em] uppercase bg-gray-200 text-gray-600 px-2 py-1 mr-2">{p.label}</span>}
             <span class="text-xs font-black tracking-widest uppercase bg-black text-white px-2 py-1">{p.company}</span>
@@ -117,13 +117,9 @@ const projects = [
           </div>
         </div>
 
-        <h3 class="text-2xl font-medium">{p.title}</h3>
+        <h3 class="text-2xl font-medium mb-4">{p.title}</h3>
 
-        {p.threadLine && (
-          <p class="italic text-gray-600 border-l-4 border-[var(--yellow)] pl-4">{p.threadLine}</p>
-        )}
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-2 border-black">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-2 border-black mb-4">
           {p.metrics.map(m => (
             <div class="p-4 border-b-2 md:border-b-0 md:border-r-2 last:border-0">
               <p class="text-2xl font-bold">{m.value}</p>
@@ -132,31 +128,42 @@ const projects = [
           ))}
         </div>
 
-        <div class="space-y-3">
-          {p.contextParas.map(para => (
-            <p class="leading-relaxed">{para}</p>
-          ))}
-          {p.note && <p class="text-xs text-gray-400 mt-2">{p.note}</p>}
-        </div>
+        <details class="border-2 border-black">
+          <summary class="p-4 font-bold cursor-pointer select-none hover:bg-gray-50 transition-colors">
+            Details
+          </summary>
+          <div class="space-y-5 p-4 pt-0 border-t-2 border-black">
+            {p.threadLine && (
+              <p class="italic text-gray-600 border-l-4 border-[var(--yellow)] pl-4">{p.threadLine}</p>
+            )}
 
-        {p.link && (
-          <div>
-            <a href={p.link.url} target="_blank" rel="noopener noreferrer" class="text-sm underline underline-offset-4 hover:opacity-70 transition-opacity">
-              {p.link.label}
-            </a>
-          </div>
-        )}
-        {p.links && p.links.length > 0 && (
-          <div class="space-y-1">
-            {p.links.map((l: {url: string, label: string}) => (
+            <div class="space-y-3">
+              {p.contextParas.map(para => (
+                <p class="leading-relaxed">{para}</p>
+              ))}
+              {p.note && <p class="text-xs text-gray-400 mt-2">{p.note}</p>}
+            </div>
+
+            {p.link && (
               <div>
-                <a href={l.url} target="_blank" rel="noopener noreferrer" class="text-sm underline underline-offset-4 hover:opacity-70 transition-opacity">
-                  {l.label}
+                <a href={p.link.url} target="_blank" rel="noopener noreferrer" class="text-sm underline underline-offset-4 hover:opacity-70 transition-opacity">
+                  {p.link.label}
                 </a>
               </div>
-            ))}
+            )}
+            {p.links && p.links.length > 0 && (
+              <div class="space-y-1">
+                {p.links.map((l: {url: string, label: string}) => (
+                  <div>
+                    <a href={l.url} target="_blank" rel="noopener noreferrer" class="text-sm underline underline-offset-4 hover:opacity-70 transition-opacity">
+                      {l.label}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
-        )}
+        </details>
 
       </article>
     ))}

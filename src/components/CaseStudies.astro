@@ -143,37 +143,42 @@ const cases = [
 
         <p class="italic text-gray-600 border-l-4 border-[var(--yellow)] pl-4">{c.threadLine}</p>
 
-        <div class="space-y-6">
-          <div>
-            <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Challenge</h4>
-            <div class="space-y-2">
-              {c.challengeParas.map(p => <p class="leading-relaxed">{p}</p>)}
+        <details class="border-2 border-black">
+          <summary class="p-4 font-bold cursor-pointer select-none hover:bg-gray-50 transition-colors">
+            Story
+          </summary>
+          <div class="space-y-6 p-4 pt-0 border-t-2 border-black">
+            <div>
+              <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Challenge</h4>
+              <div class="space-y-2">
+                {c.challengeParas.map(p => <p class="leading-relaxed">{p}</p>)}
+              </div>
+              {c.note && <p class="text-xs text-gray-400 mt-2">{c.note}</p>}
             </div>
-            {c.note && <p class="text-xs text-gray-400 mt-2">{c.note}</p>}
-          </div>
-          <div>
-            <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Approach</h4>
-            <div class="space-y-2">
-              {c.approachParas.map(p => <p class="leading-relaxed">{p}</p>)}
+            <div>
+              <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Approach</h4>
+              <div class="space-y-2">
+                {c.approachParas.map(p => <p class="leading-relaxed">{p}</p>)}
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Action</h4>
+              <div class="space-y-3">
+                {c.actionParas.map(p => <p class="leading-relaxed">{p}</p>)}
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Results</h4>
+              <div class="space-y-2">
+                {c.resultsParas.map(p => <p class="leading-relaxed">{p}</p>)}
+              </div>
+            </div>
+            <div class="border-l-4 border-black pl-4">
+              <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Key Learning</h4>
+              <p class="leading-relaxed italic">{c.keyLearning}</p>
             </div>
           </div>
-          <div>
-            <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Action</h4>
-            <div class="space-y-3">
-              {c.actionParas.map(p => <p class="leading-relaxed">{p}</p>)}
-            </div>
-          </div>
-          <div>
-            <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Results</h4>
-            <div class="space-y-2">
-              {c.resultsParas.map(p => <p class="leading-relaxed">{p}</p>)}
-            </div>
-          </div>
-          <div class="border-l-4 border-black pl-4">
-            <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Key Learning</h4>
-            <p class="leading-relaxed italic">{c.keyLearning}</p>
-          </div>
-        </div>
+        </details>
 
         {c.links.length > 0 && (
           <div>
