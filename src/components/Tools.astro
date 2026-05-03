@@ -1,37 +1,59 @@
 ---
-const mytools = [
-  'Salesforce', 'Marketo', 'Jimminy', 'Notion', 'Contentful', 'Figma', 'Miro', 'Canva', 'DV360', 'Xandr', 'Amazon DSP', 'LinkedIn Ads', 'Google Analytics', 'Matomo', 'Brandwatch', 'SQL'
+const companiesPartners = [
+  'Canonical', 'NVIDIA', 'Qualcomm', 'Intel', 'Bosch Rexroth', 'Advantech', 'Avnet', 'Kässbohrer', 'BotMind', 'AMI', 'Octopus Energy', 'Omnicom', 'Volkswagen', 'Chanel', 'Warner Bros', 'Amazon', 'Google'
 ]
---- 
+
+const mediaPartners = [
+  'Condé Nast', 'Hearst', 'Bauer', 'Business of Fashion', 'Financial Times', 'The New York Times', 'WWD', 'Dazed', 'ID', 'Sheerluxe', 'WeTransfer', 'Spotify', 'Teads'
+]
+---
 <script>
 import { gsap } from 'gsap';
 
 document.addEventListener('DOMContentLoaded', function () {
-    const clonedContainer = document.querySelector('#cloned') as any
+    const row1 = document.querySelector('#ticker-row-1') as any;
+    const row2 = document.querySelector('#ticker-row-2') as any;
 
-    Array.from(clonedContainer.children).forEach((img: any) => {
-        const clone = img.cloneNode(true); 
-        clonedContainer.appendChild(clone); 
-    })
+    [row1, row2].forEach(container => {
+        if (!container) return;
+        Array.from(container.children).forEach((el: any) => {
+            container.appendChild(el.cloneNode(true));
+        });
+    });
 
-    const tl = gsap.timeline({ repeat: -1 });
-    tl.to(clonedContainer, {
-        x: -(clonedContainer.scrollWidth / 2),  duration: 30, ease: 'none'
-    })
+    if (row1) {
+        gsap.to(row1, {
+            x: -(row1.scrollWidth / 2), duration: 40, ease: 'none', repeat: -1
+        });
+    }
+    if (row2) {
+        gsap.set(row2, { x: -(row2.scrollWidth / 2) });
+        gsap.to(row2, {
+            x: 0, duration: 40, ease: 'none', repeat: -1
+        });
+    }
 });
 </script>
-  
 
-
-<section class="bg-black py-6 relative z-5">
-    <div class="overflow-hidden">
-        <div class="flex items-center gap-10 md:gap-30" id="cloned">
-            {mytools.map(item => (
-              <div class="text-white flex-1 text-2xl whitespace-nowrap"> {item} </div>
-            ))}
+<section class="bg-black py-6 relative z-5 space-y-4">
+    <div>
+        <p class="text-[10px] font-black tracking-[0.2em] uppercase text-gray-500 text-center mb-2">COMPANIES & PARTNERS</p>
+        <div class="overflow-hidden">
+            <div class="flex items-center gap-8 md:gap-16" id="ticker-row-1">
+                {companiesPartners.map(item => (
+                    <span class="text-white text-lg whitespace-nowrap">{item}</span>
+                ))}
+            </div>
+        </div>
+    </div>
+    <div>
+        <p class="text-[10px] font-black tracking-[0.2em] uppercase text-gray-500 text-center mb-2">MEDIA & PUBLISHER PARTNERS</p>
+        <div class="overflow-hidden">
+            <div class="flex items-center gap-8 md:gap-16" id="ticker-row-2">
+                {mediaPartners.map(item => (
+                    <span class="text-white text-lg whitespace-nowrap">{item}</span>
+                ))}
+            </div>
         </div>
     </div>
 </section>
-
-
-

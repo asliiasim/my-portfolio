@@ -1,0 +1,165 @@
+---
+import svgUnderline from '../assets/underline.svg'
+
+const projects = [
+  {
+    id: 'case-vitrifi',
+    label: 'CONFIDENTIAL',
+    company: 'B2B SaaS Telecoms Scale-up',
+    role: 'Product Marketing Manager · 2024 to 2025',
+    title: '85 interviews. One insight. A new narrative.',
+    threadLine: 'The product hadn\'t changed. The messaging had stopped working. Eighty-five structured buyer interviews later, we knew exactly why, and exactly what to say instead.',
+    contextParas: [
+      'Conducted 85+ structured interviews with CSPs (Communications Service Providers), alt-nets, and wholesale operators across three buyer layers: technical, process, and commercial.',
+      'Synthesised findings into a complete narrative repositioning, from feature-led to outcome-led (time / cost / risk), and rebuilt every enablement surface from research up.',
+      '9-segment messaging matrix (3 personas x 3 segments). 2 content tracks (technical vs. non-technical). A Notion-based Content Hub with version control. A Loom video onboarding library (200+ employees trained). An event reporting framework across 20+ events including MWC, FTTH, LINX123, and Connected Britain. SDR email cadences built from buyer interview language.',
+      'Co-produced an IDC InfoBrief on wholesale fibre market dynamics.',
+    ],
+    note: 'CSP = Communications Service Provider (telecoms operators, alternative network builders, wholesale carriers)',
+    metrics: [
+      { value: '65%', label: 'email open rate on repositioned SDR sequences (segmented list of CSP decision-makers; industry benchmark 30 to 40%)' },
+      { value: '40%', label: 'reduction in content turnaround (Content Hub self-serve vs. prior Slack-based request system)' },
+      { value: '200+', label: 'employees trained via Loom onboarding hub in 30% less time' },
+    ],
+    link: null,
+  },
+  {
+    id: 'case-phd',
+    label: 'CONFIDENTIAL',
+    company: 'PHD Media / Omnicom · UK & Ireland',
+    role: 'Digital Marketing Executive · Aug 2022 to Mar 2024',
+    title: '200 hours of manual reporting. One dashboard. An entirely different way to work.',
+    threadLine: null,
+    contextParas: [
+      'Sole UK and Ireland owner of a luxury fashion brand account for 1.5 years, managing £1M+ in annual programmatic media across DV360 (Google\'s programmatic buying platform), Xandr, Yahoo DSP, and Amazon DSP.',
+      'Direct publisher relationships across Conde Nast, Hearst, Bauer, Spotify, WeTransfer, and Teads.',
+      'Built an automated reporting dashboard consolidating all four platforms into a single real-time view, replacing weekly manual PDF reports. Shifted from static weekly budget allocation to daily rebalancing based on same-day performance signals.',
+      'Built first-party data activation (CRM to lookalike modelling to sequential TOFU/MOFU/BOFU messaging) and tested contextual targeting as a cookie-deprecation alternative. Validated performance parity and recommended as primary strategy.',
+      'Also worked collaboratively on automotive (Volkswagen) and entertainment (Warner Bros) accounts.',
+    ],
+    note: null,
+    metrics: [
+      { value: '+15%', label: 'ROI improvement across client base from daily multi-DSP optimisation vs. weekly static allocation' },
+      { value: '200+', label: 'hours saved annually from automated dashboard vs. manual weekly PDF reporting' },
+      { value: '£1M+', label: 'budgets managed as sole owner, UK & Ireland, luxury fashion brand (1.5 years)' },
+    ],
+    link: null,
+  },
+  {
+    id: 'case-enablement',
+    label: null,
+    company: 'Canonical · IoT & Devices',
+    role: 'Product Marketing Manager · Canonical IoT & Devices',
+    title: 'Sales Enablement System',
+    threadLine: null,
+    contextParas: [
+      'Built the full sales enablement infrastructure for Canonical\'s IoT and Devices portfolio.',
+      'Ubuntu Pro for Devices battlecard: qualifying questions, objection handling, FAQ on CRA/DISA-STIG/FIPS 140 compliance, key personas.',
+      '6 event-specific demo scripts opening with vertical buyer pain and closing with sales-qualifying questions. A 40-page onboarding guide as the official IoT team reference.',
+      'Monthly DBR deck for 200+ stakeholders. Partner portal equipping 150+ partners including NVIDIA, Qualcomm, and Bosch Rexroth with messaging, training, and co-marketing materials.',
+      '20+ messaging frameworks adopted by Sales, Product, and Events as daily reference.',
+    ],
+    note: null,
+    metrics: [
+      { value: '150+', label: 'partners enabled with co-marketing materials and training resources' },
+      { value: '200+', label: 'stakeholders aligned monthly via DBR (business review) deck' },
+      { value: '20+', label: 'messaging frameworks in daily use across Sales, Product, and Events teams' },
+    ],
+    link: { url: 'https://ubuntu.com/pro/devices', label: 'Ubuntu Pro for Devices (product page informed by positioning work)' },
+  },
+  {
+    id: 'case-geo',
+    label: null,
+    company: 'Canonical · IoT & Devices',
+    role: 'Product Marketing Manager · Canonical IoT & Devices',
+    title: 'GEO/AEO Content Strategy',
+    threadLine: null,
+    contextParas: [
+      'Developed the GEO/AEO (Generative Engine Optimisation / Answer Engine Optimisation) content strategy for Canonical\'s IoT and devices portfolio. This means optimising content to rank in AI-powered search engines like Perplexity, ChatGPT, and Gemini.',
+      'Ran 50+ LLM prompt variations across ChatGPT, Claude, Gemini, and Perplexity to identify positioning gaps in generative search results.',
+      'Built 3 custom Gemini Gems (AI bots): a competitive intelligence tracker monitoring 25+ embedded OS alternatives, a market news aggregator feeding product strategy sessions, and a messaging segmentation bot generating ad and content variants by persona and vertical.',
+      'Contributed to the canonical.com/knowledge hub, a Q&A-format content system designed to rank in AI-powered answer engines like Perplexity, ChatGPT, and Gemini.',
+    ],
+    note: null,
+    metrics: [
+      { value: '50+', label: 'LLM prompt variations tested across 4 AI platforms' },
+      { value: '3', label: 'custom Gemini Gems built and deployed (competitive intel, market news, messaging segmentation)' },
+      { value: '5 verticals', label: 'GEO/AEO strategy: robotics, industrial, automotive, smart cities, healthcare' },
+    ],
+    links: [
+      { url: 'https://canonical.com/knowledge/ubuntu-and-linux/what-is-linux-kernel', label: 'What is the Linux kernel? (Knowledge hub, Q&A format)' },
+      { url: 'https://canonical.com/knowledge', label: 'Canonical Knowledge Hub (answer engine optimised content system)' },
+    ],
+  },
+]
+---
+
+<section class="py-20 px-5">
+  <div class="max-w-4xl mx-auto space-y-16">
+
+    <div>
+      <div class="relative max-w-md mb-2">
+        <h2 class="text-4xl font-medium">Selected Projects</h2>
+        <img src={svgUnderline.src} alt="underline" width="140" class="absolute left-0 -bottom-1" />
+      </div>
+      <p class="text-gray-600 mt-4">Confidential engagements. Methodology and outcomes shared; full details available on request.</p>
+      <div class="border-t-2 border-gray-300 mt-6"></div>
+    </div>
+
+    {projects.map(p => (
+      <article id={p.id} class="border-t-2 border-black pt-8 space-y-5">
+
+        <div class="flex flex-wrap gap-2 items-start justify-between">
+          <div>
+            {p.label && <span class="text-[10px] font-black tracking-[0.2em] uppercase bg-gray-200 text-gray-600 px-2 py-1 mr-2">{p.label}</span>}
+            <span class="text-xs font-black tracking-widest uppercase bg-black text-white px-2 py-1">{p.company}</span>
+            <p class="text-sm text-gray-500 mt-1">{p.role}</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-medium">{p.title}</h3>
+
+        {p.threadLine && (
+          <p class="italic text-gray-600 border-l-4 border-[var(--yellow)] pl-4">{p.threadLine}</p>
+        )}
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-2 border-black">
+          {p.metrics.map(m => (
+            <div class="p-4 border-b-2 md:border-b-0 md:border-r-2 last:border-0">
+              <p class="text-2xl font-bold">{m.value}</p>
+              <p class="text-sm text-gray-500">{m.label}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="space-y-3">
+          {p.contextParas.map(para => (
+            <p class="leading-relaxed">{para}</p>
+          ))}
+          {p.note && <p class="text-xs text-gray-400 mt-2">{p.note}</p>}
+        </div>
+
+        {p.link && (
+          <div>
+            <a href={p.link.url} target="_blank" rel="noopener noreferrer" class="text-sm underline underline-offset-4 hover:opacity-70 transition-opacity">
+              {p.link.label}
+            </a>
+          </div>
+        )}
+        {p.links && p.links.length > 0 && (
+          <div class="space-y-1">
+            {p.links.map((l: {url: string, label: string}) => (
+              <div>
+                <a href={l.url} target="_blank" rel="noopener noreferrer" class="text-sm underline underline-offset-4 hover:opacity-70 transition-opacity">
+                  {l.label}
+                </a>
+              </div>
+            ))}
+          </div>
+        )}
+
+      </article>
+    ))}
+
+  </div>
+</section>

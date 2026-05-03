@@ -7,40 +7,41 @@ import casePhd from '../assets/case-phd.svg'
 
 const portfolio = [
   {
-    name: 'CRA Compliance GTM — From regulation to pipeline',
-    desc: `Positioning · GTM · Content · Events · Partner enablement`,
+    name: 'Turning a regulation into a market moment',
+    desc: `Positioning · GTM · Content · Campaigns · Partner enablement`,
     cover: `https://assets.ubuntu.com/v1/e0a65a01-Yocto%20vs%20Core%20wp%20v2%20(6).svg`,
     link: '#case-cra',
-    external: false,
+    confidential: false,
   },
   {
-    name: 'Event GTM at Scale — 6 shows, 156 MQLs, 150+ partners',
-    desc: `Event marketing · Email campaigns · Demand gen · Partner GTM`,
+    name: 'Six different buyers. One product. One narrative that worked for all of them.',
+    desc: `Event strategy · Partner activation · Demand gen · Community GTM`,
     cover: `https://assets.ubuntu.com/v1/71be06b2-Create%20a%20security%20key@3x.png`,
     link: '#case-events',
-    external: false,
+    confidential: false,
   },
   {
-    name: 'B2B SaaS Repositioning — 85+ interviews, one new narrative',
-    desc: `Customer research · Positioning · Messaging · Sales enablement`,
+    name: '85 interviews. One insight. A new narrative.',
+    desc: `Customer research · Positioning · Messaging · Enablement`,
     cover: caseVitrifi.src,
     link: '#case-vitrifi',
-    external: false,
+    confidential: true,
   },
   {
-    name: 'Programmatic at Scale — £1M+ budgets, 4 DSPs, +15% ROI',
-    desc: `Paid media · Automation · Analytics · DV360 · Amazon DSP`,
+    name: '200 hours of manual reporting. One dashboard. An entirely different way to work.',
+    desc: `Paid media · Automation · Analytics · Multi-platform`,
     cover: casePhd.src,
     link: '#case-phd',
-    external: false,
+    confidential: true,
   },
 ]
 ---
 
 <section class="py-25 space-y-10 px-5" id="work">
     <div class="max-w-md mx-auto relative">
-      <h1 class="text-4xl font-medium text-center">My Portfolio</h1>
-      <img src={svgUnderline.src} alt="underline" width="140" class="absolute left-50 -bottom-1" />
+      <h1 class="text-4xl font-medium text-center">Featured Work</h1>
+      <p class="text-center text-gray-600 mt-2">Full case studies with live artifacts and public evidence</p>
+      <img src={svgUnderline.src} alt="underline" width="140" class="absolute left-50 -bottom-5" />
     </div>
 
     <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -55,6 +56,9 @@ const portfolio = [
               <img src={arrowCard.src} alt="arrow" width="25" />
             </div>
             <p class="mr-20 text-sm text-gray-500">{item.desc}</p>
+            {item.confidential && (
+              <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-2">Confidential: metrics and methodology shared</p>
+            )}
           </div>
           <Bars />
         </a>

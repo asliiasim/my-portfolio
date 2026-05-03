@@ -1,6 +1,6 @@
 const author = {
-  name: `Asli Şimşek`,
-  nickname: `Asli Şimşek`,
+  name: `Asli Simsek`,
+  nickname: `Asli Simsek`,
   linkedin: `https://linkedin.com/in/aslialimesimsek`,
   email: `mailto:aslialimesimsek@gmail.com`,
   x: `https://linkedin.com/in/aslialimesimsek`,

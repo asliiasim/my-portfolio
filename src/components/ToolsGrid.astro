@@ -1,0 +1,38 @@
+---
+const toolGroups = [
+  {
+    label: 'Analytics & Data',
+    tools: 'Google Analytics · Matomo · Brandwatch · SQL · Python · Stata',
+  },
+  {
+    label: 'CRM & Automation',
+    tools: 'Salesforce · Marketo · Stripo · Jimminy · Loom',
+  },
+  {
+    label: 'Paid Media',
+    tools: 'DV360 · Amazon DSP · LinkedIn Ads · Meta Ads · Xandr · Yahoo DSP · Google Ads',
+  },
+  {
+    label: 'Content & Collaboration',
+    tools: 'Notion · Contentful · WordPress · Figma · Miro · Canva · HTML',
+  },
+  {
+    label: 'AI Workflows',
+    tools: 'Custom Gemini Gems · Claude Cowork agents',
+  },
+]
+---
+
+<section class="py-10 px-5">
+  <div class="max-w-4xl mx-auto">
+    <p class="text-[10px] font-black tracking-[0.2em] uppercase text-gray-500 mb-6">TOOLS & PLATFORMS</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {toolGroups.map(group => (
+        <div>
+          <h4 class="text-sm font-bold mb-1">{group.label}</h4>
+          <p class="text-sm text-gray-600">{group.tools}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
