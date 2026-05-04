@@ -27,7 +27,7 @@ const companies = [
           class="hover:opacity-70 transition-opacity"
           title={c.name}
         >
-          <img src={c.logo} alt={c.name} class="h-8 md:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+          <img src={c.logo} alt={c.name} class={`h-8 md:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity ${c.name === 'Gartner' ? 'max-w-32' : ''}`} />
         </a>
       ))}
     </div>
